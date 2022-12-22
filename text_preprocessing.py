@@ -14,7 +14,6 @@ def text_preprocessing(texts: list) -> list:
 
     Args:
         abstracts: List of strings to be preprocessed.
-
     Returns:
         lemmas: List of lists with preprocessed words for NLP techniques.
     """

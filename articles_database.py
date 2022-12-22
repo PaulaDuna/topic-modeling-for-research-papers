@@ -12,7 +12,6 @@ def search(year: int, email: str, query: str, num_articles: int) -> list:
         email: Your email so that the NCBI can contact you if there is a problem.
         query: The text query you wish to search for.
         num_articles: Total number of unique identifiers (UIDs) from the retrieved set to be shown in the output (maximum of 10,000 UIDs).
-
     Returns:
         idlist: List of PubMed article UIDs.
     """
