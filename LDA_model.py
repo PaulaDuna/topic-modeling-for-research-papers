@@ -69,6 +69,8 @@ if __name__ == "__main__":
     wordcloud = word_cloud_viz(abstracts, 50)
     wordcloud.to_file('data/common_words.png')
     dictionary, corpus, ldamodel = lda_model(abstracts, 3)
+    dictionary.save("data/model/dictionary.dict") #save the dictionary
+    gensim.corpora.mmcorpus.MmCorpus.serialize("data/model/corpus.mm", corpus) #save the corpus
     ldamodel.save("data/model/abstracts.model") #save the model
     viz = lda_viz(dictionary, corpus, ldamodel, 15)
     pyLDAvis.save_html(viz, 'data/ldamodel_viz.html')
