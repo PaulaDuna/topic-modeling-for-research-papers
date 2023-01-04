@@ -29,7 +29,7 @@ def word_cloud_viz(texts: list, n_most_common: int):
 
 def lda_model(texts: list, num_topics: int):
     """
-    Latent Dirichlet Allocation (LDA) for topic modeling.
+    Latent Dirichlet Allocation (LDA) for topic modelling.
 
     Args:
         texts: List of lists with preprocessed words for NLP techniques.
@@ -50,7 +50,7 @@ def lda_model(texts: list, num_topics: int):
 
 def lda_viz(dictionary, corpus, ldamodel, terms_to_display):
     """
-    Topic modeling visualization.
+    Topic modelling visualization.
 
     Args:
         dictionary: Dictionary that encapsulates the mapping between words and their integer ids. 
