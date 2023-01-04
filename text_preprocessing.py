@@ -53,10 +53,6 @@ def text_preprocessing(texts: list) -> list:
 
 if __name__ == "__main__":
     df = pd.read_csv('data/data.csv')
-    print('The articles database has {} rows and {} null values.'.format(df.shape[0], df.isnull().any(axis = 1).sum()))
-    df = df.dropna()
-    print('Null values were removed.')
-    df.to_csv('data/cleaned_data.csv', index = False)
     abstracts = df['AB'].tolist() #list of abstracts from database
     lemmas = text_preprocessing(abstracts)
     with open("data/lemmas.json", 'w') as f:

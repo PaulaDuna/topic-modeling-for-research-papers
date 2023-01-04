@@ -60,4 +60,7 @@ if __name__ == "__main__":
         articles.extend(records)
     fields_list = ['AB', 'AD', 'AU', 'DP', 'TA', 'JT', 'PL', 'PT', 'PMID', 'TI'] #fields used to create the database
     df = database(articles, fields_list)
+    print('The articles database has {} rows and {} null values.'.format(df.shape[0], df.isnull().any(axis = 1).sum()))
+    df = df.dropna()
+    print('Null values were removed.')
     df.to_csv('data/data.csv', index = False)
