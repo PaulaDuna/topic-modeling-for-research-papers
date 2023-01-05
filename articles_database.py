@@ -54,7 +54,7 @@ def database(records: list, fields_list: list) -> pd.DataFrame:
 
 if __name__ == "__main__":
     articles = []
-    for year in range(2018, 2022): #years used to limit the search
+    for year in range(1990, 2022): #years used to limit the search
         idlist = search(year, "example@email.com", "artificial intelligence", 10000)
         records = fetch(idlist)
         articles.extend(records)
