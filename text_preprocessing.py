@@ -19,7 +19,7 @@ def text_preprocessing(texts: list) -> list:
     """
     print('Starting text preprocessing.')
     
-    text_to_lowercase = [text.lower() for text in texts] #convert text to lowercase letters
+    text_to_lowercase = [text.lower() for text in texts if type(text) == str] #convert text to lowercase letters
     hyphen_removal = [text.replace('-', ' ') for text in text_to_lowercase] #replace hyphens with a space
 
     #expand contractions
