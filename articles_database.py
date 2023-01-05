@@ -2,6 +2,8 @@
 
 from Bio import Entrez
 from Bio import Medline
+from http.client import IncompleteRead
+import time
 import pandas as pd
 
 def search(year: int, email: str, query: str, num_articles: int) -> list:
@@ -56,8 +58,14 @@ if __name__ == "__main__":
     articles = []
     for year in range(1990, 2022): #years used to limit the search
         idlist = search(year, "example@email.com", "artificial intelligence", 10000)
-        records = fetch(idlist)
-        articles.extend(records)
+        try:
+            records = fetch(idlist)
+            articles.extend(records)
+        except IncompleteRead:
+            print('\r', 'Sleep for 60 seconds!\n', flush = True, end = " ")
+            time.sleep(60)
+            records = fetch(idlist)
+            articles.extend(records)
     fields_list = ['AB', 'AD', 'AU', 'DP', 'TA', 'JT', 'PL', 'PT', 'PMID', 'TI'] #fields used to create the database
     df = database(articles, fields_list)
     print('The articles database has {} rows and {} null values.'.format(df.shape[0], df.isnull().any(axis = 1).sum()))
