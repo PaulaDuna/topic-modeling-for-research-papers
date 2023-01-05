@@ -1,14 +1,14 @@
-# Topic modelling for AI research paper abstracts
+# Topic modeling for AI research paper abstracts
 
-Python project to create a database with PubMed articles and use Gensim LDA for topic modelling.
+Python project to create a database with PubMed articles and use Gensim LDA for topic modeling.
 
 ## Project main goal
 
-The aim of this project is to use [Biopython](https://biopython.org/) to create a database containing abstracts of PubMed articles and other relevant information based on keywords and use Latent Dirichlet Allocation (LDA) for topic modelling with [Gensim](https://radimrehurek.com/gensim/).
+The aim of this project is to use [Biopython](https://biopython.org/) to create a database containing abstracts of PubMed articles and other relevant information based on keywords and use Latent Dirichlet Allocation (LDA) for topic modeling with [Gensim](https://radimrehurek.com/gensim/).
 
 ## Summary
 
-This project is divided into four phases: creation of a database with abstracts and information from PubMed scientific papers; text preprocessing to prepare the articles for NLP models; NLP topic modelling; and visualization of the results.
+This project is divided into four phases: creation of a database with abstracts and information from PubMed scientific papers; text preprocessing to prepare the articles for NLP models; NLP topic modeling; and visualization of the results.
 
 Here is a brief summary of the steps to follow:
 
@@ -20,15 +20,15 @@ B) Text preprocessing:
 
 - **text_preprocessing**: performs text preprocessing for NLP techniques, which consists of converting text to lowercase letters, replacing hyphens with a space, expanding contractions, removing all but letters, tokenizing, removing stopwords and lemmatizing text. See also **most_common_word_cloud**.
 
-C) LDA topic modelling:
+C) LDA topic modeling:
 
-- **LDA_model**: uses Gensim Latent Dirichlet Allocation (LDA) for topic modelling of preprocessed abstracts. See also **LDA_viz**.
+- **LDA_model**: uses Gensim Latent Dirichlet Allocation (LDA) for topic modeling of preprocessed abstracts. See also **LDA_viz**.
 
 D) Data visualization:
 
 - **most_common_word_cloud**: creates a word cloud visualization for most common words in preprocessed texts with [wordcloud](https://amueller.github.io/word_cloud/).
 
-- **LDA_viz**: creates a visualization for LDA topic modelling using [pyLDAvis](https://pyldavis.readthedocs.io/en/latest/index.html).
+- **LDA_viz**: creates a visualization for LDA topic modeling using [pyLDAvis](https://pyldavis.readthedocs.io/en/latest/index.html).
 
 - **topic_word_cloud**: makes a list of words for word cloud visualization of most relevant terms for each topic, creates word cloud visualizations and saves files in the data folder.
 
