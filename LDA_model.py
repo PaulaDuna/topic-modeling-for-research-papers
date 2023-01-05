@@ -3,6 +3,7 @@
 import json
 import gensim
 import multiprocessing
+import os
 
 def lda_model(texts: list, num_topics: int):
     """
@@ -29,6 +30,8 @@ if __name__ == "__main__":
     with open("data/lemmas.json", 'r') as f:
         abstracts = json.load(f)
     dictionary, corpus, ldamodel = lda_model(abstracts, 3)
+    if not os.path.exists("data/model"):
+        os.makedirs("data/model")
     dictionary.save("data/model/dictionary.dict") #save the dictionary
     gensim.corpora.mmcorpus.MmCorpus.serialize("data/model/corpus.mm", corpus) #save the corpus
     ldamodel.save("data/model/abstracts.model") #save the model
