@@ -5,6 +5,7 @@ from Bio import Medline
 from http.client import IncompleteRead
 import time
 import pandas as pd
+import os
 
 def search(year: int, email: str, query: str, num_articles: int) -> list:
     """Search for articles in PubMed based on keywords.
@@ -71,4 +72,6 @@ if __name__ == "__main__":
     print('The articles database has {} rows and {} null values.'.format(df.shape[0], df.isnull().any(axis = 1).sum()))
     df = df.dropna()
     print('Null values were removed.')
+    if not os.path.exists("data"):
+        os.makedirs("data")
     df.to_csv('data/data.csv', index = False)
