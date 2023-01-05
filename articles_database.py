@@ -20,7 +20,7 @@ def search(year: int, email: str, query: str, num_articles: int) -> list:
     Entrez.email = email
     handle = Entrez.esearch(db = "pubmed", term = query, retmax = num_articles, sort = "pub_date", usehistory = "y", mindate = mindate, maxdate = maxdate)
     results = Entrez.read(handle)
-    print('There are {} articles associated with the term "{}" that were published during {}. You are going to fetch {} maximum.'.format(results['Count'], query, year, num_articles))
+    print('There are {} articles associated with the term "{}" that were published during {}.'.format(results['Count'], query, year))
     idlist = results["IdList"]
     handle.close()
     return idlist
